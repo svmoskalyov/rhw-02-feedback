@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import { MdThumbUp, MdThumbsUpDown, MdThumbDown } from 'react-icons/md';
 import { Box } from './Box';
-// import { Button } from './Button/Button';
 import { Feedback } from './Feedback';
+import { Statistics } from './Statistics';
 
 export class App extends Component {
   state = {
@@ -11,24 +10,35 @@ export class App extends Component {
     bad: 0,
   };
 
+  handleGood = event => {
+    console.log('click on good');
+    console.log(this);
+    const { target } = event;
+    console.log(target);
+  };
+
+  handleNeutral = () => {
+    console.log('click on Neutral');
+  };
+
+  handleBad = () => {
+    console.log('click on Bad');
+  };
+
   render() {
     return (
       <Box width="400px" mx="auto" p={4}>
-        <Feedback />
-        {/* <h1>Please leave feedback</h1>
-        <Box
-          width="350px"
-          display="flex"
-          alignItems="center"
-          justifyContent="space-evenly"
-          my={4}
-        >
-          <Button icon={MdThumbUp}>Good</Button>
-          <Button icon={MdThumbsUpDown}>Neutral</Button>
-          <Button icon={MdThumbDown}>Bad</Button>
-        </Box> */}
+        <Feedback
+          onGood={this.handleGood}
+          onNeutral={this.handleNeutral}
+          onBad={this.handleBad}
+        />
 
-        <h2>Statistics</h2>
+        <Statistics
+          statGood={this.state.good}
+          statNeutral={this.state.neutral}
+          statBad={this.state.bad}
+        />
       </Box>
     );
   }
