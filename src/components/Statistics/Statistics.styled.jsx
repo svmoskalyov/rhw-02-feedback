@@ -13,3 +13,7 @@ export const SubTitle = styled.p`
   font-weight: ${p => p.theme.fontWeights.normal};
   line-height: ${p => p.theme.lineHeights.body};
 `;
+
+export const TotalTitle = styled(SubTitle)`
+  font-weight: ${p => p.theme.fontWeights.bold};
+`;
