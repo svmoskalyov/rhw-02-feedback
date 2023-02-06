@@ -1,10 +1,12 @@
+import { Title, SubTitle } from './Statistics.styled';
+
 export const Statistics = ({ statGood, statNeutral, statBad }) => {
   return (
     <>
-      <h2>Statistics</h2>
-      <p>Good: {statGood}</p>
-      <p>Neutral: {statNeutral}</p>
-      <p>Bad: {statBad}</p>
+      <Title>Statistics</Title>
+      <SubTitle>Good: {statGood}</SubTitle>
+      <SubTitle>Neutral: {statNeutral}</SubTitle>
+      <SubTitle>Bad: {statBad}</SubTitle>
     </>
   );
 };

@@ -1,11 +1,12 @@
 import { MdThumbUp, MdThumbsUpDown, MdThumbDown } from 'react-icons/md';
 import { Box } from '../Box';
 import { Button } from '../Button/Button';
+import { Title } from './Feedback.styled';
 
 export const Feedback = ({ onGood, onNeutral, onBad }) => {
   return (
     <>
-      <h1>Please leave feedback</h1>
+      <Title>Please leave feedback</Title>
       <Box
         width="350px"
         display="flex"
