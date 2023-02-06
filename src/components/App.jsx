@@ -10,35 +10,36 @@ export class App extends Component {
     bad: 0,
   };
 
-  handleGood = event => {
-    console.log('click on good');
-    console.log(this);
-    const { target } = event;
-    console.log(target);
+  handleGood = () => {
+    this.setState(prevState => ({
+      good: prevState.good + 1,
+    }));
   };
 
   handleNeutral = () => {
-    console.log('click on Neutral');
+    this.setState(prevState => ({
+      neutral: prevState.neutral + 1,
+    }));
   };
 
   handleBad = () => {
-    console.log('click on Bad');
+    this.setState(prevState => ({
+      bad: prevState.bad + 1,
+    }));
   };
 
   render() {
+    const { good, neutral, bad } = this.state;
+
     return (
-      <Box width="400px" mx="auto" p={4}>
+      <Box width="420px" mx="auto" p={4}>
         <Feedback
           onGood={this.handleGood}
           onNeutral={this.handleNeutral}
           onBad={this.handleBad}
         />
 
-        <Statistics
-          statGood={this.state.good}
-          statNeutral={this.state.neutral}
-          statBad={this.state.bad}
-        />
+        <Statistics statGood={good} statNeutral={neutral} statBad={bad} />
       </Box>
     );
   }
