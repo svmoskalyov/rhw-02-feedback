@@ -54,11 +54,11 @@ export class App extends Component {
         />
 
         <Statistics
-          statGood={good}
-          statNeutral={neutral}
-          statBad={bad}
-          statTotal={this.countTotalFeedback()}
-          statPercentage={this.countPositiveFeedbackPercentage()}
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          total={this.countTotalFeedback()}
+          positivePercentage={this.countPositiveFeedbackPercentage()}
         />
       </Box>
     );
