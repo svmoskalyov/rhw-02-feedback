@@ -1,6 +1,6 @@
 import { MdThumbUp, MdThumbsUpDown, MdThumbDown } from 'react-icons/md';
-import { Box } from './Box';
-import { Button } from './Button/Button';
+import { Box } from '../Box';
+import { Button } from '../Button/Button';
 
 export const Feedback = ({ onGood, onNeutral, onBad }) => {
   return (
