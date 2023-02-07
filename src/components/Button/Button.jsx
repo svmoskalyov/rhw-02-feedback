@@ -1,9 +1,25 @@
+import { MdThumbUp, MdThumbsUpDown, MdThumbDown } from 'react-icons/md';
 import { StyledButton } from './Button.styled';
 
-export const Button = ({ icon: Icon = null, type = 'button', click, children }) => {
+export const Button = ({ name, click, children }) => {
+  let icon = '';
+  switch (name) {
+    case 'good':
+      icon = <MdThumbUp />;
+      break;
+    case 'neutral':
+      icon = <MdThumbsUpDown />;
+      break;
+    case 'bad':
+      icon = <MdThumbDown />;
+      break;
+    default:
+      icon = null;
+  }
+
   return (
-    <StyledButton type={type} onClick={click}>
-      {Icon && <Icon />}
+    <StyledButton type="button" name={name} onClick={click}>
+      {icon}
       {children}
     </StyledButton>
   );
