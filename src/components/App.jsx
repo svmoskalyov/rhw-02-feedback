@@ -11,24 +11,6 @@ export class App extends Component {
     bad: 0,
   };
 
-  // handleGood = () => {
-  //   this.setState(prevState => ({
-  //     good: prevState.good + 1,
-  //   }));
-  // };
-
-  // handleNeutral = () => {
-  //   this.setState(prevState => ({
-  //     neutral: prevState.neutral + 1,
-  //   }));
-  // };
-
-  // handleBad = () => {
-  //   this.setState(prevState => ({
-  //     bad: prevState.bad + 1,
-  //   }));
-  // };
-
   handleFeedback = optionName => {
     this.setState(prevState => {
       return { [optionName]: prevState[optionName] + 1 };
@@ -72,20 +54,6 @@ export class App extends Component {
             positivePercentage={positivePercentage}
           />
         </Section>
-
-        {/* <FeedbackOptions
-          onGood={this.handleGood}
-          onNeutral={this.handleNeutral}
-          onBad={this.handleBad}
-        /> */}
-
-        {/* <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-        /> */}
       </Box>
     );
   }
