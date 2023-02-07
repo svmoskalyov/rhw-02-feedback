@@ -1,4 +1,4 @@
-import { Title, SubTitle, TotalTitle } from './Statistics.styled';
+import { SubTitle, TotalTitle } from './Statistics.styled';
 
 export const Statistics = ({
   good,
@@ -9,7 +9,6 @@ export const Statistics = ({
 }) => {
   return (
     <>
-      <Title>Statistics</Title>
       <SubTitle>Good: {good}</SubTitle>
       <SubTitle>Neutral: {neutral}</SubTitle>
       <SubTitle>Bad: {bad}</SubTitle>
