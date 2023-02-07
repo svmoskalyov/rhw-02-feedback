@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { MdThumbUp, MdThumbsUpDown, MdThumbDown } from 'react-icons/md';
 import { StyledButton } from './Button.styled';
 
@@ -23,4 +24,10 @@ export const Button = ({ name, click, children }) => {
       {children}
     </StyledButton>
   );
+};
+
+Button.propTypes = {
+  name: PropTypes.string.isRequired,
+  click: PropTypes.func.isRequired,
+  children: PropTypes.node,
 };
