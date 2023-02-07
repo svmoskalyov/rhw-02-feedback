@@ -1,4 +1,5 @@
-import { SubTitle, TotalTitle } from './Statistics.styled';
+import { Item, List, Total, Line } from './Statistics.styled';
+import { Notification } from 'components/Notification/Notification';
 
 export const Statistics = ({
   good,
@@ -9,11 +10,18 @@ export const Statistics = ({
 }) => {
   return (
     <>
-      <SubTitle>Good: {good}</SubTitle>
-      <SubTitle>Neutral: {neutral}</SubTitle>
-      <SubTitle>Bad: {bad}</SubTitle>
-      <TotalTitle>Total: {total}</TotalTitle>
-      <TotalTitle>Positive feedback: {positivePercentage}%</TotalTitle>
+      {total ? (
+        <List>
+          <Item>Good: {good}</Item>
+          <Item>Neutral: {neutral}</Item>
+          <Item>Bad: {bad}</Item>
+          <Line />
+          <Total>Total: {total}</Total>
+          <Total>Positive feedback: {positivePercentage}%</Total>
+        </List>
+      ) : (
+        <Notification message="No feedback given" />
+      )}
     </>
   );
 };
